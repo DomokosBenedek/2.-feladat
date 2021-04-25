@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <title>document</title>
+    
+</head>
+<body>
+    <div class="w-75 mx-auto">
+        <button type="button"  id="color" class="w-100 mx-auto mt-5">Change color</button>
+    </div>
+    <br>
+    <div class="w-75 mx-auto">
+        <label for="Username"><b>Input szöveg:</b></label>
+        <input type="text" name="Username">
+        <br>
+        <input class="btn btn-info w-25 mt-0" type="text" name="add" id="add" value="Hozzáad!">
+        <input class="btn btn-danger w-25 mt-0" type="text" name="delete" id="delete" value="Töröl!">
+       
+    </div>
+
+<script>
+    let button = document.getElementById("color");
+ 
+    function RBC (e) {
+    button.style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    }
+ 
+    button.addEventListener("click", RBC);
+    window.onload = RBC();
+
+    let btnAdd = document.querySelector("#add");
+
+    function addHeader(){
+        let mainDiv = document.querySelector(".vh-100");
+        let newHeader = document.createElement("h1");
+        newHeader.innerText = "Szia Javascript";
+        mainDiv.appendChild(newHeader);
+    }
+
+    btnAdd.addEventListener("click". addHeader);
+    
+    let btnDelete = document.querySelector("#delete");
+
+    function deleteChild(){
+        let mainDiv = document.querySelector(".vh-100");
+        let lastChild = mainDiv.lastChild;
+
+        mainDiv.removeChild(lastChild);
+    }
+
+    btnDelete.addEventListener("click", deleteChild);
+ 
+</script>
+
+</body>
+</html>
